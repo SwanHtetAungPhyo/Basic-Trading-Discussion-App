@@ -1,0 +1,14 @@
+aws:
+  sqs:
+  queue: https://sqs.eu-north-1.amazonaws.com/162047532564/Binance-ticker
+
+server:
+  port: 8081
+  jwt:
+    secret: ayQy6Bru46T7xa7PyZXaNcLH35Zyn9BdLXmk+szYiDCaKq54C5gYmIE3zdUQX3b0kdNEPNRsWhhVHgwbFCjG4Q==
+auora:
+  endpoint: database-1.chisik6ewd0q.eu-north-1.rds.amazonaws.com
+  username: postrges
+  password: SwanHtetAungPhyo
+
+
