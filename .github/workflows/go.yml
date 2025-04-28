@@ -10,6 +10,10 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    env:
+      AWS_REGION: eu-north-1
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY}}
+      AWS_SECRET_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
     steps:
     - uses: actions/checkout@v4
 
@@ -23,3 +27,15 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+    - name: Configure AWS Cred
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-region: ${{env.AWS_REGION}}
+
+    - name: Log in Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+#
+#    - name: Build docker image
+
